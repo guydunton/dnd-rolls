@@ -17,6 +17,10 @@ The program can handle:
 - Multiple dice at once (`4D4`, `10D8`)
 - Modifiers e.g. (`D20 - 1`)
 
+CLI output is also colorized for high and low rolls
+
+![Output with max rolls green and rolls of 1 in red](assets/colored_output.png)
+
 ## Build program & run tests
 
 The program is built and tested using cargo
