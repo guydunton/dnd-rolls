@@ -18,9 +18,9 @@ impl DiceRoll {
             return format!("{}", as_string.green());
         } else if self.result == 1 {
             return format!("{}", as_string.red());
-        } else {
-            return as_string;
         }
+
+        as_string
     }
 }
 
@@ -73,7 +73,7 @@ impl RollResult {
         add_dice_total - sub_dice_total + self.total_modifiers().unwrap_or(0)
     }
 
-    fn print_dice(dice_rolls: &Vec<DiceRoll>) -> Option<String> {
+    fn print_dice(dice_rolls: &[DiceRoll]) -> Option<String> {
         // Just check that there are some dice
         if dice_rolls.is_empty() {
             return None;

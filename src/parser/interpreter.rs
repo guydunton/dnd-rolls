@@ -1,4 +1,4 @@
-use crate::ast::{Exp, Operator};
+use super::ast::{Exp, Operator};
 
 #[derive(Debug, PartialEq)]
 pub enum Token {
@@ -45,7 +45,7 @@ fn dice_become_tokens() {
 
 #[test]
 fn multidice_become_many_dice() {
-    let result = tree_to_rpn(&Exp::MultiDice(crate::ast::MultiDice {
+    let result = tree_to_rpn(&Exp::MultiDice(super::ast::MultiDice {
         count: 2,
         dice: Box::new(Exp::Dice(6)),
     }));
@@ -57,7 +57,7 @@ fn multidice_become_many_dice() {
 
 #[test]
 fn operators_are_added_to_the_queue() {
-    let result = tree_to_rpn(&Exp::Op(crate::ast::Operation {
+    let result = tree_to_rpn(&Exp::Op(super::ast::Operation {
         left: Box::new(Exp::Constant(3)),
         operator: Operator::Minus,
         right: Box::new(Exp::Constant(4)),
