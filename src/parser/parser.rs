@@ -1,4 +1,4 @@
-use crate::ast::{Exp, MultiDice, Operation, Operator};
+use super::ast::{Exp, MultiDice, Operation, Operator};
 use nom::{
     branch::alt,
     bytes::complete::{tag, take_while},
@@ -17,7 +17,7 @@ fn str_to_u8(str: &[u8]) -> Option<u8> {
 }
 
 fn dice_parse(text: &[u8]) -> IResult<&[u8], Exp> {
-    let str_to_dice = |str| str_to_u8(str).map(|num| Exp::Dice(num));
+    let str_to_dice = |str| str_to_u8(str).map(Exp::Dice);
     let (input, _) = alt((char('D'), char('d')))(text)?;
     map_opt(take_while(is_digit), str_to_dice)(input)
 }
