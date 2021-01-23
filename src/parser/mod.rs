@@ -7,6 +7,7 @@ use interpreter::{tree_to_rpn, Token};
 use parser::parse;
 use rand::Rng;
 use roll_result::{DiceRoll, RollResult};
+use serde_json::json;
 
 use wasm_bindgen::prelude::*;
 
@@ -64,4 +65,38 @@ pub fn dnd_roll(text: &str) -> Option<RollResult> {
 #[wasm_bindgen]
 pub fn dnd_roll_str(text: &str) -> Option<String> {
     dnd_roll(text).map(|result| format!("{}", result))
+}
+
+#[wasm_bindgen]
+pub fn dnd_roll_json(text: &str) -> Option<String> {
+    dnd_roll(text).map(|result| {
+        let add_dice: Vec<serde_json::Value> = result
+            .get_add_dice_types()
+            .iter()
+            .map(|dice| {
+                json!({
+                    "dice": dice,
+                    "rolls": result.get_add_dice_results(*dice)
+                })
+            })
+            .collect();
+
+        let sub_dice: Vec<serde_json::Value> = result
+            .get_sub_dice_types()
+            .iter()
+            .map(|dice| {
+                json!({
+                    "dice": dice,
+                    "rolls": result.get_sub_dice_results(*dice)
+                })
+            })
+            .collect();
+        json!({
+            "add_dice": add_dice,
+            "sub_dice": sub_dice,
+            "modifier": result.total_modifiers(),
+            "total": result.total(),
+        })
+        .to_string()
+    })
 }

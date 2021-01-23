@@ -1,6 +1,6 @@
 # D&D Rolls
 
-D&D Rolls is a program for rolling D&D dice. Give it a string and it will convert it to dice and roll them.
+D&D Rolls is a web page and binary for rolling D&D dice. Give it a string and it will convert it to dice and roll them.
 
 ```bash
 > ./dnd-rolls '4d8 + d6 - 1d4 - 1'
@@ -28,4 +28,31 @@ The program is built and tested using cargo
 ```bash
 cargo build
 cargo test
+```
+
+## Run CLI
+
+```bash
+cargo run -- '3d8 + 2'
+# Sample output:
+# [add dice]: D8(8, 2, 1)
+# [modifiers]: 2
+# [total]: 13
+```
+
+## Build web page
+
+```bash
+# Build the wasm binary
+wasm-pack build
+
+# Setup the web build
+cd www
+npm i
+
+# Run the web build
+npm run build:prod
+
+# Run the web dev server
+npm start
 ```

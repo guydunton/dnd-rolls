@@ -58,7 +58,38 @@ impl RollResult {
         self.sub_constants.extend_from_slice(new_constants);
     }
 
-    fn total_modifiers(&self) -> Option<i32> {
+    fn get_dice_vec_types(dice_rolls: &[DiceRoll]) -> Vec<i32> {
+        let mut unique_dice: Vec<i32> = dice_rolls.iter().map(|dice| dice.dice).collect();
+        unique_dice.sort();
+        unique_dice.dedup();
+        unique_dice
+    }
+
+    pub fn get_add_dice_types(&self) -> Vec<i32> {
+        Self::get_dice_vec_types(&self.add_dice)
+    }
+
+    pub fn get_sub_dice_types(&self) -> Vec<i32> {
+        Self::get_dice_vec_types(&self.sub_dice)
+    }
+
+    fn get_dice_results(dice_rolls: &[DiceRoll], dice: i32) -> Vec<i32> {
+        dice_rolls
+            .iter()
+            .filter(|&roll| roll.dice == dice)
+            .map(|roll| roll.result)
+            .collect()
+    }
+
+    pub fn get_add_dice_results(&self, dice: i32) -> Vec<i32> {
+        Self::get_dice_results(&self.add_dice, dice)
+    }
+
+    pub fn get_sub_dice_results(&self, dice: i32) -> Vec<i32> {
+        Self::get_dice_results(&self.sub_dice, dice)
+    }
+
+    pub fn total_modifiers(&self) -> Option<i32> {
         Some(
             self.add_constants.iter().sum::<i32>()
                 + self.sub_constants.iter().map(|c| c * -1).sum::<i32>(),
@@ -66,7 +97,7 @@ impl RollResult {
         .filter(|&val| val != 0)
     }
 
-    fn total(&self) -> i32 {
+    pub fn total(&self) -> i32 {
         let add_dice_total: i32 = self.add_dice.iter().map(|dice| dice.result).sum();
         let sub_dice_total: i32 = self.sub_dice.iter().map(|dice| dice.result).sum();
 
@@ -80,8 +111,7 @@ impl RollResult {
         }
 
         // Get a list of all the unique dice
-        let mut unique_dice: Vec<i32> = dice_rolls.iter().map(|dice| dice.dice).collect();
-        unique_dice.dedup();
+        let unique_dice = RollResult::get_dice_vec_types(dice_rolls);
 
         // Go through the list and grab all the results
         let result = unique_dice

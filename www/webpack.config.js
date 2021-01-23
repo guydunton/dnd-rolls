@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/bootstrap.js',
@@ -11,6 +12,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
@@ -24,5 +29,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: ['src/index.html'],
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
