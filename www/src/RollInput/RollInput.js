@@ -13,21 +13,24 @@ const RollInput = ({ onSubmit }) => {
 
   return (
     <div className='roll_input'>
-      <label htmlFor='roll-text'>Roll</label>
-      <input
-        type='text'
-        id='roll-text'
-        placeholder='Enter roll e.g. 2d8 + 2'
-        onChange={onChangeText}
-        value={text}
-      />
-      <button
-        onClick={() => {
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
           onSubmit(text);
         }}
       >
-        Roll
-      </button>
+        <div className='roll_input__field'>
+          <input
+            type='text'
+            id='roll-text'
+            placeholder='Enter roll e.g. 2d8 + 2'
+            aria-label='Roll text field'
+            onChange={onChangeText}
+            value={text}
+          />
+          <button type='submit'>Roll</button>
+        </div>
+      </form>
     </div>
   );
 };

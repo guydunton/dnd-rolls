@@ -1,0 +1,16 @@
+.result {
+  display: flex;
+}
+
+.result h3 {
+  width: 30%;
+}
+
+.result ul {
+  list-style: none;
+}
+
+.result li {
+  display: inline;
+  margin-right: 1rem;
+}

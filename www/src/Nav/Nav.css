@@ -1,0 +1,7 @@
+.nav {
+  grid-column: 1 / 7;
+}
+
+.nav h1 {
+  text-align: right;
+}

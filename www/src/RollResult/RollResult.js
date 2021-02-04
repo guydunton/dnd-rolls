@@ -1,5 +1,5 @@
 import React from 'react';
-import DiceResult from '../DiceResult/DiceResult';
+import ResultField from '../ResultField/ResultField';
 import './RollResult.css';
 
 /** @type {React.FunctionComponent<{text?: string}> */
@@ -8,17 +8,18 @@ const RollResult = ({ text }) => {
     const { add_dice, sub_dice, modifier, total } = JSON.parse(text);
 
     return (
-      <div>
+      <div className='results'>
+        <h2>Result</h2>
         {add_dice.map(({ dice, rolls }) => (
-          <DiceResult key={dice} dice={dice} rolls={rolls} />
+          <ResultField key={dice} name={`D${dice}`} results={rolls} />
         ))}
         {sub_dice.map(({ dice, rolls }) => (
-          <DiceResult key={dice} dice={dice} rolls={rolls} />
+          <ResultField key={dice} name={`D${dice}`} results={rolls} />
         ))}
-        <h3>Modifier</h3>
-        <p>{modifier}</p>
-        <h3>Total</h3>
-        <p>{total}</p>
+        <ResultField name='Modifier' results={[modifier]} />
+        <div className='result__total'>
+          <ResultField name='Total' results={[total]} />
+        </div>
       </div>
     );
   } catch (err) {

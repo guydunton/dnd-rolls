@@ -1,0 +1,21 @@
+.results {
+  grid-column: 1 / 7;
+}
+
+.result__total {
+  border-top: 1px solid black;
+}
+
+/* Medium */
+@media (min-width: 40rem) {
+  .results {
+    grid-column: 2 / 6;
+  }
+}
+
+/* large */
+@media (min-width: 64rem) {
+  .results {
+    grid-column: 3 / 5;
+  }
+}

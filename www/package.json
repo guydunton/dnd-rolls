@@ -9,7 +9,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server",
-    "build:prod": "webpack --config webpack.config.js --mode=production"
+    "build:prod": "webpack --config webpack.config.js --mode=production",
+    "deploy": "npm run build:prod && aws s3 sync --region eu-west-1 ./dist s3://dnd-rolls-static-site && ./fix-wasm.sh"
   },
   "repository": {
     "type": "git",
