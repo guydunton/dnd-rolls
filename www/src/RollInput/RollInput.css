@@ -1,5 +1,6 @@
 .roll_input {
   grid-column: 1 / 7;
+  margin: 0 0.5rem 2rem;
 }
 
 .roll_input__field {
@@ -16,10 +17,12 @@
   border-top-left-radius: 0.5rem;
   border: 1px solid black;
   border-bottom-left-radius: 0.5rem;
+  font-weight: 300;
+  overflow: hidden;
 }
 
 .roll_input button {
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0.75rem;
   font-size: 1rem;
   margin-left: -1px;
   border: 1px solid black;
@@ -29,12 +32,16 @@
 
 @media (min-width: 40rem) {
   .roll_input {
-    grid-column: 3 / 6;
+    grid-column: 2 / 6;
+  }
+
+  .roll_input button {
+    padding: 0.75rem 1.5rem;
   }
 }
 
 @media (min-width: 64rem) {
   .roll_input {
-    grid-column: 3 / 5;
+    grid-column: 2 / 6;
   }
 }

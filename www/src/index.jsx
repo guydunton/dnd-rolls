@@ -7,10 +7,10 @@ import Nav from './Nav/Nav';
 import './index.css';
 
 const App = () => {
-  const [text, setText] = useState(
-    `{"add_dice":[{"dice":8,"rolls":[3,3,1]}],"modifier":-1,"sub_dice":[],"total":7}`
-  );
-  // const [text, setText] = useState(undefined);
+  // const [text, setText] = useState(
+  //   `{"add_dice":[{"dice":8,"rolls":[3,3,1]}],"modifier":-1,"sub_dice":[],"total":7}`
+  // );
+  const [text, setText] = useState(undefined);
 
   /** @type {(text: string) => void} */
   const onSubmit = (text) => {

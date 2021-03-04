@@ -1,16 +1,33 @@
 .result {
   display: flex;
+  margin: 1rem 0;
 }
 
 .result h3 {
-  width: 30%;
+  width: 40%;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 .result ul {
   list-style: none;
+  vertical-align: middle;
 }
 
-.result li {
+.result-val {
   display: inline;
   margin-right: 1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* large */
+@media (min-width: 64rem) {
+  .result h3 {
+    font-size: 1.6rem;
+  }
+  .result-val {
+    font-size: 1.6rem;
+  }
 }

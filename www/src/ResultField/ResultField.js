@@ -7,7 +7,9 @@ const ResultField = ({ name, results }) => (
     <h3>{name}</h3>
     <ul>
       {results.map((roll, i) => (
-        <li key={i}>{roll}</li>
+        <li className='result-val' key={i}>
+          {roll}
+        </li>
       ))}
     </ul>
   </div>

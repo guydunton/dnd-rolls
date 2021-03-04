@@ -3,5 +3,18 @@
 }
 
 .nav h1 {
-  text-align: right;
+  text-align: center;
+  margin: 2rem 0.5rem;
+}
+
+.nav h1 {
+  color: #000;
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+
+@media (min-width: 40rem) {
+  .nav h1 {
+    text-align: right;
+  }
 }

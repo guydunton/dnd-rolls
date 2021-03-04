@@ -1,5 +1,6 @@
 import React from 'react';
 import ResultField from '../ResultField/ResultField';
+import RollHelp from '../RollHelp/RollHelp';
 import './RollResult.css';
 
 /** @type {React.FunctionComponent<{text?: string}> */
@@ -9,7 +10,7 @@ const RollResult = ({ text }) => {
 
     return (
       <div className='results'>
-        <h2>Result</h2>
+        <h2>Results</h2>
         {add_dice.map(({ dice, rolls }) => (
           <ResultField key={dice} name={`D${dice}`} results={rolls} />
         ))}
@@ -23,7 +24,7 @@ const RollResult = ({ text }) => {
       </div>
     );
   } catch (err) {
-    return <div></div>;
+    return <RollHelp />;
   }
 };
 

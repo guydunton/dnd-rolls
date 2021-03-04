@@ -1,36 +1,35 @@
-.results {
+.help {
   grid-column: 1 / 7;
-  margin: 0 0.5rem;
 }
 
-.result__total {
-  border-top: 1px solid black;
-}
-
-.results h2 {
+.help h2 {
   font-size: 1.8rem;
   margin: 0.5rem 0 1.25rem;
 }
 
-.results p {
-  font-size: 1.2rem;
+.help p {
+  font-size: 1.4rem;
 }
 
-.results li {
-  font-size: 1.2rem;
+.help ul {
+  margin-left: 25px;
+}
+
+.help li {
+  font-size: 1.4rem;
   margin-top: 0.875rem;
 }
 
 /* Medium */
 @media (min-width: 40rem) {
-  .results {
+  .help {
     grid-column: 2 / 6;
   }
 }
 
 /* large */
 @media (min-width: 64rem) {
-  .results {
+  .help {
     grid-column: 3 / 5;
   }
 }

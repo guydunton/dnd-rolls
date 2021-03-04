@@ -1,5 +1,6 @@
 body {
-  font-family: Copperplate, 'Copperplate Gothis Light', fantasy;
+  /* font-family: Copperplate, 'Copperplate Gothis Light', fantasy, Arial; */
+  font-family: Copperplate, 'Copperplate Gothis Light', fantasy, Arial;
 }
 
 .container {
@@ -8,4 +9,15 @@ body {
   max-width: 85rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
 }
