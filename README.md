@@ -1,3 +1,5 @@
+<img src='assets/icon.svg' width='100' alt="d20 icon for D&D rolls"/>
+
 # D&D Rolls
 
 D&D Rolls is a web page and binary for rolling D&D dice. Give it a string and it will convert it to dice and roll them.

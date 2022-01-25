@@ -1,6 +1,7 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/bootstrap.js',
@@ -30,5 +31,9 @@ module.exports = {
       patterns: ['src/index.html'],
     }),
     new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      favicon: 'static/favicon.ico',
+    }),
   ],
 };
