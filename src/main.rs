@@ -1,5 +1,5 @@
 use clap::{Arg, ArgAction, Command};
-use dnd_rolls::dnd_roll;
+use dnd_parser::dnd_roll;
 
 fn main() {
     let matches = Command::new("Dice Roller")
