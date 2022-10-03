@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/rustwasm/create-wasm-app#readme",
   "dependencies": {
-    "dnd-rolls": "file://../pkg",
+    "dnd-rolls": "file:../pkg",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
