@@ -1,0 +1,200 @@
+.roll_input {
+  grid-column: 1 / 7;
+  margin: 0 0.5rem 2rem;
+}
+
+.roll_input__field {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.roll_input input {
+  font-family: inherit;
+  flex: 1 1 auto;
+  padding: 0.75rem 0.5rem;
+  font-size: 1.2rem;
+  border-top-left-radius: 0.5rem;
+  border: 1px solid black;
+  border-bottom-left-radius: 0.5rem;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+.roll_input button {
+  padding: 0.75rem 0.75rem;
+  font-size: 1rem;
+  margin-left: -1px;
+  border: 1px solid black;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+@media (min-width: 40rem) {
+  .roll_input {
+    grid-column: 2 / 6;
+  }
+
+  .roll_input button {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .roll_input {
+    grid-column: 2 / 6;
+  }
+}
+
+.result {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.result h3 {
+  width: 40%;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.result ul {
+  list-style: none;
+  vertical-align: middle;
+}
+
+.result-val {
+  display: inline;
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* large */
+@media (min-width: 64rem) {
+  .result h3 {
+    font-size: 1.6rem;
+  }
+  .result-val {
+    font-size: 1.6rem;
+  }
+}
+
+.help {
+  grid-column: 1 / 7;
+}
+
+.help h2 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.help p {
+  font-size: 1.4rem;
+}
+
+.help ul {
+  margin-left: 25px;
+}
+
+.help li {
+  font-size: 1.4rem;
+  margin-top: 0.875rem;
+}
+
+/* Medium */
+@media (min-width: 40rem) {
+  .help {
+    grid-column: 2 / 6;
+  }
+}
+
+/* large */
+@media (min-width: 64rem) {
+  .help {
+    grid-column: 3 / 5;
+  }
+}
+
+.results {
+  grid-column: 1 / 7;
+  margin: 0 0.5rem;
+}
+
+.result__total {
+  border-top: 1px solid black;
+}
+
+.results h2 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.results p {
+  font-size: 1.2rem;
+}
+
+.results li {
+  font-size: 1.2rem;
+  margin-top: 0.875rem;
+}
+
+/* Medium */
+@media (min-width: 40rem) {
+  .results {
+    grid-column: 2 / 6;
+  }
+}
+
+/* large */
+@media (min-width: 64rem) {
+  .results {
+    grid-column: 3 / 5;
+  }
+}
+
+.nav {
+  grid-column: 1 / 7;
+}
+
+.nav h1 {
+  text-align: center;
+  margin: 2rem 0.5rem;
+}
+
+.nav h1 {
+  color: #000;
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+
+@media (min-width: 40rem) {
+  .nav h1 {
+    text-align: right;
+  }
+}
+
+body {
+  /* font-family: Copperplate, 'Copperplate Gothis Light', fantasy, Arial; */
+  font-family: Copperplate, 'Copperplate Gothis Light', Arial;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 85rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
